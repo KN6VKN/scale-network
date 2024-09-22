@@ -10,7 +10,7 @@
     { pkgs, ... }:
     {
       core = pkgs.testers.runNixOSTest (import ./core.nix { inherit inputs pkgs; });
-      loghost = pkgs.testers.runNixOSTest ./loghost.nix;
+      rsyslogd = pkgs.testers.runNixOSTest ./rsyslogd.nix;
     }
   );
 
