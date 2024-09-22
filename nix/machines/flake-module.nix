@@ -43,16 +43,6 @@ in
         inputs.microvm.nixosModules.host
       ];
     };
-    loghost = lib.nixosSystem {
-      inherit system;
-      modules = [
-        common
-        ./loghost.nix
-      ];
-      specialArgs = {
-        inherit inputs;
-      };
-    };
     monitor = lib.nixosSystem {
       inherit system;
       modules = [
@@ -89,6 +79,7 @@ in
         common
         ./core/microvm-config.nix
         ./core/master.nix
+        ./_common/rsyslogd.nix
       ];
       specialArgs = {
         inherit inputs;
