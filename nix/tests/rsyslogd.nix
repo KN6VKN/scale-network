@@ -1,8 +1,8 @@
 {
-  name = "loghost";
+  name = "rsyslogd";
 
   nodes.machine1 = {
-    imports = [ ../machines/loghost.nix ];
+    imports = [ ../machines/_common/rsyslogd.nix ];
     virtualisation.graphics = false;
   };
 
